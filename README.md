@@ -1,4 +1,4 @@
-# Priject 3
+# Project 3
 
 Language: Java 21
 
