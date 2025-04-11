@@ -3,12 +3,12 @@ public class HashTable {
 	private String[] table;
     private int count;
     private double loadFactor;
-    private int resize;
+    private int resizeStrategy;
 
-    public HashTable(int initialSize, double loadFactor, int resize) {
+    public HashTable(int initialSize, double loadFactor, int resizeStrategy) {
         this.table = new String[initialSize];
         this.loadFactor = loadFactor;
-        this.resize = resize;
+        this.resizeStrategy = resizeStrategy;
         this.count = 0;
     }
 
@@ -20,7 +20,7 @@ public class HashTable {
         if (find(key)) return;
 
         if ((double)(count + 1) / table.length > loadFactor) {
-            resize();
+            resizeTable();
         }
 
         int index = hash(key);
@@ -42,8 +42,8 @@ public class HashTable {
         return false;
     }
 
-    private void resize() {
-        int newSize = (resize == 1) ? table.length * 2 : table.length + 10000;
+    private void resizeTable() {
+        int newSize = (resizeStrategy == 1) ? table.length * 2 : table.length + 10000;
         String[] oldTable = table;
         table = new String[newSize];
         count = 0;
