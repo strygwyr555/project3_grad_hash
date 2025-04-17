@@ -1,5 +1,10 @@
+import java.util.*;
+
 
 public class HashDriver {
+	
+	private static final int SIZE = 131072;
+    private static final int HALF = SIZE / 2;
 	
 	// Test Case 1
 	private static void testBasic() {
@@ -37,7 +42,7 @@ public class HashDriver {
 		}
 		System.out.println("Size after 24 inserts: " + ht.getTableSize()); // Expect 64 (2 resizes)
 		for (int i = 0; i < 24; i++) {
-			System.out.println("Find value" + i + ": " + ht.find("val" + i));
+			System.out.println("Find value" + i + ": " + ht.find("value" + i));
 		}
 	}
 	
@@ -64,6 +69,22 @@ public class HashDriver {
 	        System.out.println("Find value" + i + ": " + ht.find("value" + i));
 	    }
 	}
+	
+	// Generate 131,072 unique 8-digit strings
+    public static List<String> generateUnique8DigitStrings(int size) {
+        Set<String> uniqueSet = new HashSet<>();
+        Random rand = new Random();
+        while (uniqueSet.size() < size) {
+            int num = 10000000 + rand.nextInt(90000000);
+            uniqueSet.add(String.valueOf(num));
+        }
+        return new ArrayList<>(uniqueSet);
+    }
+    
+    // Verify uniqueness
+    public static boolean isUnique(List<String> list) {
+        return new HashSet<>(list).size() == list.size();
+    }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -82,6 +103,18 @@ public class HashDriver {
 	    
 	    System.out.println("\n--- Test Case 5: Insert 24 values (expect 2 resizes, final size = 20016) ---");
 	    testSecondResizeAddition();
+	    
+	    // Generate Dataset
+        List<String> wholeList = generateUnique8DigitStrings(SIZE);
+        if (isUnique(wholeList)) {
+            System.out.println("All values are unique.");
+        }
+
+        List<String> addValues = wholeList.subList(0, HALF);
+        List<String> checkValues = wholeList.subList(HALF, SIZE);
+
+        System.out.println("AddValues: " + addValues.size());
+        System.out.println("CheckValues: " + checkValues.size());
 
 	}
 

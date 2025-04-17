@@ -29,6 +29,7 @@ public class HashTable {
         }
         table[index] = key;
         count++;
+        //System.out.println("Inserted: " + key + " | Table Size: " + table.length);
     }
 
     public boolean find(String key) {
@@ -59,4 +60,7 @@ public class HashTable {
         return table.length;
     }
 
+    public double getLoadFactor() {
+        return (double) count / table.length;
+    }
 }
