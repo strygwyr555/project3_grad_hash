@@ -86,6 +86,7 @@ public class HashDriver {
         return new HashSet<>(list).size() == list.size();
     }
 
+    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -115,6 +116,10 @@ public class HashDriver {
 
         System.out.println("AddValues: " + addValues.size());
         System.out.println("CheckValues: " + checkValues.size());
+        
+        RehashTiming.run(wholeList);
+        
+        RehashTimingPlot.main(new String[]{});
 
 	}
 
