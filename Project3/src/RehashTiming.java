@@ -6,7 +6,7 @@ import java.util.List;
 
 public class RehashTiming {
 
-    public static void run(List<String> wholeList) {
+    public static void main(List<String> wholeList) {
         List<Long> noRehashTimes = new ArrayList<>();
         List<Long> doublingTimes = new ArrayList<>();
         List<Long> additionTimes = new ArrayList<>();

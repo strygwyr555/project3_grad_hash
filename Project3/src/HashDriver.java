@@ -113,13 +113,16 @@ public class HashDriver {
 
         List<String> addValues = wholeList.subList(0, HALF);
         List<String> checkValues = wholeList.subList(HALF, SIZE);
-
+        
         System.out.println("AddValues: " + addValues.size());
         System.out.println("CheckValues: " + checkValues.size());
         
-        RehashTiming.run(wholeList);
+        RehashTiming.main(wholeList);
         
         RehashTimingPlot.main(new String[]{});
+        
+        TimingVsLoadFactor.main(addValues, checkValues);
+
 
 	}
 

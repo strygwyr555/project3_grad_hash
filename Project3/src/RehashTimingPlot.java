@@ -50,7 +50,7 @@ public class RehashTimingPlot {
         chart.getStyler().setLegendPosition(Styler.LegendPosition.InsideNE);  // Correct usage of Styler for legend position
 
         // Display the chart
-        new SwingWrapper<>(chart).displayChart();
+       // new SwingWrapper<>(chart).displayChart();
         
         // Save the chart to a PNG file
         try {

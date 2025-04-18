@@ -63,4 +63,8 @@ public class HashTable {
     public double getLoadFactor() {
         return (double) count / table.length;
     }
+    
+    public int size() {
+        return this.count;
+    }
 }
