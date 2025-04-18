@@ -87,7 +87,7 @@ public class HashDriver {
     }
 
     
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
 		System.out.println("\n--- Test Case 1: Basic Insert and Find ---");
@@ -122,6 +122,8 @@ public class HashDriver {
         RehashTimingPlot.main(new String[]{});
         
         TimingVsLoadFactor.main(addValues, checkValues);
+        
+        TimingVsTheoreticalPlot.main(new String[]{});
 
 
 	}
