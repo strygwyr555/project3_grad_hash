@@ -41,10 +41,10 @@ The average time to add values into a hash table was recorded using:
 - Addition Strategy caused more frequent resizes when the load factor threshold was hit, leading to longer insert times especially as the table grew large.
 
 ### C) Pros and Cons of the Strategies
-Strategy    Pros                                  Cons
-Doubling    Fewer resizes, efficient rehashing,   Sudden memory jump, may
-            good for growing data                 allocate more memory
-Addition    Predictable memory growth             More frequent resizes,                                                       longer insert times in                                                       large datasets
+| Strategy | Pros | Cons |
+|----------|----------|----------|
+| Doubling | Fewer resizes, efficient rehashing, good for growing data | Sudden memory jump, may allocate more memory|
+| Addition | Predictable memory growth | More frequent resizes,  longer insert times in large datasets |
 
 ### D) Picking the best load factor
 Based on the timing and prob results:
